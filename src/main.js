@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from 'vue-router'
+import router from './router/router'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import echarts from 'echarts'
 
+Vue.use(Element);
+Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
-Vue.use(router);
+// Vue.prototype.$axios = axios;
 
 new Vue({
-  render: h => h(App),
+    router,
+    render: h => h(App),
 }).$mount('#app');
